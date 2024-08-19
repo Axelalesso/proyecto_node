@@ -1,0 +1,48 @@
+
+body{
+margin: 0;
+padding: 0;
+}
+.titulo{
+text-align: center;
+color: black;
+}
+.subtitulo{
+margin-top: 5px;
+text-align: center;
+color: black;
+
+}
+
+h1 , h2{
+font-family: 'Alfa Slab One ' , cursive;
+text-align: center;
+margin-top: 60px;
+}
+
+footer{
+text-align: center;
+background-color: #aaa;
+}
+
+.container{
+margin-right: 10px;
+}
+
+.mapa iframe{
+width: 100%;
+aspect-ratio: 1.2;
+}
+
+html{
+scroll-behavior: smooth;
+}
+
+.scroll_section{
+scroll-margin-top: 60px;
+}
+
+.libertadores{
+margin-top: 100px;
+
+}
