@@ -46,3 +46,42 @@ scroll-margin-top: 60px;
 margin-top: 100px;
 
 }
+
+.lista-grandes {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.lista-grandes li{
+margin: 4px , 0;
+}
+
+.lista-grandes li a{
+background-color: #fff;  
+color: #a0a0a0;  
+font-family: Arial, Helvetica, sans-serif;
+text-decoration: none;
+font-size: 1.2rem;
+transition: all .2s ease-in-out;
+display: block;
+}
+
+.lista-grandes li a :hover{
+color: black;
+background-color: #dadada;
+}
+
+.lista-grandes li a img{
+width: 120px;
+height: 50px;
+transition: all .2s ease-in-out;
+margin-right: 1rem;
+opacity: 0.7;
+}
+
+.lista-grandes li a img :hover{
+filter: none;
+margin-right: 1.4rem;
+opacity: 1;
+}

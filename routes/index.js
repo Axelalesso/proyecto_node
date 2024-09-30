@@ -2,15 +2,19 @@ var express = require('express');
 var router = express.Router();
 
 var nodemailer = require('nodemailer')
+var noticiasModel = require('../models/noticiasModels');
 
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/', async function(req, res, next) {
+  noticias = await noticiasModel.getNoticias();
+  noticias = noticias.splice(0,5);
+
+res.render('index',{
+      noticias
+    });
 });
-
-
 
 router.post('/', async (req,res,next)=> {
   
