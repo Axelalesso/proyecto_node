@@ -81,35 +81,39 @@
   </div>
 
 <div class="row my-3">
-  <div id="Los5Grandes" class="col-md5-offset-md-2 py-3">
-    <h2>Los 5 Grandes</h2>
-    <ul class="lista-grandes">
-      {{#each noticias}}
-      <li><a href="#"data-bs-toggle="modal" data-bs-target="#Modal{{id}}">
-        <img src="img/boca.jpg">{{titulo}}</a>
-        </li>
-      {{/each}}
-    </ul>
-  </div>
+  <div id="noticias" class="col-md5-offset-md-2 py-3" class="row" scroll_section>
+    <h2>Futbol Argentino</h2>
+   <ul class="lista-noticias">
+  {{#each noticias}}
+    <li>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">
+        <img src="img/casla.png" alt="Noticia">
+        <span>{{titulo}}</span>
+      </a>
+    </li>
+  {{/each}}
+</ul>
 </div>
 
 {{#each noticias}}
-<div class="modal fade" id=" Modal {{id}} " tablindex="-1" aria-labelledby="exampleModalLbael" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-tittle" id="exampleModalLabel">Ultima Noticia</h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h2>{{titulo}}</h2>
-         <h3>{{subtitulo}}</h3>
-        <p>{{cuerpo}}</p>
+  <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">TITULO</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>{{titulo}}</h2>
+          <h3>{{subtitulo}}</h3>
+          <p>{{cuerpo}}</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 {{/each}}
+
+
 
   <div  id="Conocenos" class="row" scroll_section>
     <div class="col-md-4 offset-md-2">
