@@ -1,0 +1,30 @@
+<div class="container" style="margin: 50px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar la noticia</h4>
+            <form method="post" action="/admin/noticias/modificar">
+                <input type="hidden" value="{{noticias.id}}" name="id">
+                <div class="form-group">
+                    <input type="text" placeholder="titulo" value="{{noticias.titulo}}" class="form-control" name="titulo">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="subtitulo" class="form-control" name="subtitulo">{{noticias.subtitulo}}</textarea>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="cuerpo" class="form-control" name="cuerpo">{{noticias.cuerpo}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+        </div>
+    </div>
+    
+    {{#if error}}
+    <h5>{{message}}</h5>
+    {{/if}}
+
+
+
+
+
+
+</div>
