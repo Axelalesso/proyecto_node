@@ -87,7 +87,7 @@
   {{#each noticias}}
     <li>
       <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">
-        <img src="img/casla.png" alt="Noticia">
+        <img src="{{imagen}}">
         <span>{{titulo}}</span>
       </a>
     </li>
@@ -106,6 +106,7 @@
         <div class="modal-body">
           <h2>{{titulo}}</h2>
           <h3>{{subtitulo}}</h3>
+          <img src="{{imagen}}/">
           <p>{{cuerpo}}</p>
         </div>
       </div>

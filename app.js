@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 require('dotenv').config();
 var session = require('express-session');
+var fileUpload = require('express-fileupload');
 
 
 var indexRouter = require('./routes/index');
@@ -43,6 +44,18 @@ app.use(session({
       console.log(error);
     }
   }        
+
+app.use(fileUpload({
+  useTempFiles:true,
+  tempFileDir:'/temp/'
+  }))
+
+
+
+
+
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

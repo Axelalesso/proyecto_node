@@ -2,11 +2,7 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h4>Agregar una nueva noticia</h4>
-            <form action="/admin/novedades/agregar" method="post">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="titulo" name="titulo">
-                    </div>
-                    
+            <form action="/admin/noticias/agregar" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="titulo" name="titulo">
                     </div>
@@ -14,7 +10,7 @@
                         <textarea type="text" class="form-control" placeholder="subtitulo" name="subtitulo"></textarea>
                     </div>
                     <div class="form-group">
-                        <textarea type="text" class="form-control" placeholder="cuerpo"></textarea>
+                        <textarea type="text" class="form-control" placeholder="cuerpo" name="cuerpo"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
             </form>

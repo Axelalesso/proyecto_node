@@ -3,15 +3,30 @@ var router = express.Router();
 
 var nodemailer = require('nodemailer')
 var noticiasModel = require('../models/noticiasModels');
-
+var cloudinary = require('cloudinary').v2;
 
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  noticias = await noticiasModel.getNoticias();
-  noticias = noticias.splice(0,5);
+noticias = await noticiasModel.getNoticias();
 
-res.render('index',{
+noticias = noticias.splice(0,5);
+    if(noticias.img_id){
+    const imagen = cloudinary.url(noticias.img_id,{
+      width: 460,
+      crop:'fill'
+    });
+    return{
+      ...noticias,
+      imagen
+    }
+    } else {
+      return {
+        ...noticias,
+        imagen:'/imagenes/noimage.jpg'
+      }
+    }
+  res.render('index',{
       noticias
     });
 });
