@@ -9,8 +9,8 @@ var cloudinary = require('cloudinary').v2;
 /* GET home page. */
 router.get('/', async function(req, res, next) {
 noticias = await noticiasModel.getNoticias();
-
 noticias = noticias.splice(0,5);
+noticias=noticias.map(noticias=> {
     if(noticias.img_id){
     const imagen = cloudinary.url(noticias.img_id,{
       width: 460,
@@ -26,6 +26,7 @@ noticias = noticias.splice(0,5);
         imagen:'/imagenes/noimage.jpg'
       }
     }
+  });
   res.render('index',{
       noticias
     });

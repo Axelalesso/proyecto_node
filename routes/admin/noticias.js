@@ -19,7 +19,7 @@ router.get('/', async  function(req, res, next) {
           crop : 'fill'
           });
           return{
-            ...noticia,
+            ...noticias,
             imagen
           }
         } else {
@@ -60,10 +60,10 @@ router.get ('/agregar',(req,res,next)=>{
   router.post('/agregar', async (req , res , next)=>{
     try{
       var img_id='';
-      if (req.files && Object.keys(req.files).length>0){
+      if (req.files && Object.keys(req.files).length > 0) {
         imagen = req.files.imagen;
         img_id = (await uploader (imagen.temp.FilePath)).public_id;
-        }
+      }
 
 
       if ( req.body.titulo !=""&& req.body.subtitulo !="" && req.body.cuerpo !=""){
@@ -72,7 +72,7 @@ router.get ('/agregar',(req,res,next)=>{
           img_id
         
         });
-
+        
         res.redirect('/admin/noticias')
       } else{
         res.render('admin/agregar',{
@@ -85,7 +85,7 @@ router.get ('/agregar',(req,res,next)=>{
         console.log(error)
         res.render('admin/agregar',{
           layout:'admin/layout',
-          error: true, message:'no se cargo la novedad'
+          error: true, message:'no se cargo la noticia'
           });
         }
       });
