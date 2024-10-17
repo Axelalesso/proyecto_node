@@ -87,7 +87,7 @@
   {{#each noticias}}
     <li>
       <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">
-        <img src="{{imagen}}">
+        <img src="{{imagen}}" width="120">
         <span>{{titulo}}</span>
       </a>
     </li>
@@ -104,7 +104,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h2>{{titulo}}</h2>
+          <h3>{{titulo}}</h3>
           <h3>{{subtitulo}}</h3>
           <img src="{{imagen}}">
           <p>{{cuerpo}}</p>

@@ -11,7 +11,7 @@ router.get('/', async function(req, res, next) {
 noticias = await noticiasModel.getNoticias();
 noticias = noticias.splice(0,5);
 noticias=noticias.map(noticias=> {
-    if(noticias.img_id){
+    if (noticias.img_id) {
     const imagen = cloudinary.url(noticias.img_id,{
       width: 460,
       crop:'fill'
